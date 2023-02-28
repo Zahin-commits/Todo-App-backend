@@ -12,7 +12,7 @@ exports.getAllTask =async (req,res)=>{
 
 exports.createTask = async (req,res)=>{
 if(!req.body.title){
-return res.send('please provide a title')
+return res.json('please provide a title')
 }
 
 try {
