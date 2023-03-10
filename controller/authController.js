@@ -51,6 +51,7 @@ const token = jwt.sign(payload,process.env.KEY,{expiresIn:'1d'});
 
 
    res.status(202).cookie('access_token',token,{
+    //sameSite: 'none', secure: true,
    httpOnly:true
    }).send(`welcoom to the site dear ${user.name}`)
    

@@ -18,7 +18,20 @@ const connectDB = async ()=>{
 
 
 app.use(morgan('tiny'));
-app.use(cors());
+app.use(cors({
+ credentials: true,
+ origin:"https://todo-app-ldv9.onrender.com",
+ //origin:"http://127.0.0.1:3006",
+// origin:"http://127.0.0.1:5173",
+}));
+/* const origin = 'http://127.0.0.1:3006/'
+app.use(
+  cors({
+    credentials: true,
+    origin
+  }),
+); */
+
 app.use(express.json());
 app.use(cookieParser());
 

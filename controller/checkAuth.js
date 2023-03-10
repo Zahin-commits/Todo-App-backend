@@ -5,7 +5,7 @@ exports.checkAuth = (req,res,next)=>{
  const token = req.cookies.access_token;
 
  if (!token){
-    return res.send('please login or create a new id')
+    return res.json('please login or create a new id')
  }
 
  try {
@@ -18,6 +18,6 @@ exports.checkAuth = (req,res,next)=>{
 
     next()
  } catch (error) {
-    
+    console.log(error)
  }
 }
